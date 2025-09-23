@@ -60,4 +60,5 @@ class Solution {
         }
         return newhead.next;
     }
+
 }
