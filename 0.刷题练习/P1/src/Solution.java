@@ -47,4 +47,5 @@ public class Solution {
         int[] result = Solution.twoSum(nums, target);
         System.out.println("数组下标为：[" + result[0] + "," + result[1] + "]");
     }
+
 }
