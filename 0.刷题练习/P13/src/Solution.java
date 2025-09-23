@@ -9,6 +9,7 @@ import java.util.Map;
  * Time: 07:58
  */
 class Solution {
+
     public int romanToInt2(String s) {
         int sum = 0;
         for (int i = 0; i < s.length(); i++) {
