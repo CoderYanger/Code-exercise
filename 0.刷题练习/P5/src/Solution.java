@@ -73,6 +73,7 @@ class Solution {
             return arr;
         }
     }*/
+
         public String longestPalindrome(String s) {
             if(s==null||s.length()<=1){
                 return s;//空串或者单字符直接返回
