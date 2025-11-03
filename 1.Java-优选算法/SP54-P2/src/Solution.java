@@ -15,6 +15,7 @@
  *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
  */
+
 class Solution {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         //吴小哲的思路比之前的简单太多了
