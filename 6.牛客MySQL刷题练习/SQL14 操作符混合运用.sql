@@ -1,0 +1,2 @@
+-- 题目：现在运营想要找到gpa在3.5以上(不包括3.5)的山东大学用户 或 gpa在3.8以上(不包括3.8)的复旦大学同学进行用户调研，请你取出相应数据,取出的数据按照device_id升序排列
+select device_id,gender,age,university,gpa from user_profile where (gpa>3.5 and university="山东大学") or (gpa>3.8 and university= "复旦大学")
