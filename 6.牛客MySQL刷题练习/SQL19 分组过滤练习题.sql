@@ -1,0 +1,2 @@
+-- 题目：现在运营想查看每个学校用户的平均发贴和回帖情况，寻找低活跃度学校进行重点运营，请取出平均发贴数低于5的学校或平均回帖数小于20的学校。
+select university,avg(question_cnt) avg_question_cnt,avg(answer_cnt) avg_answer_cnt from user_profile group by university having avg(question_cnt)<5 or avg(answer_cnt)<20
