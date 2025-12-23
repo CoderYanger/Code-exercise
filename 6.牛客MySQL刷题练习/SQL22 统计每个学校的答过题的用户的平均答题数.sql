@@ -1,0 +1,2 @@
+-- 运营想要了解每个学校答过题的用户平均答题数量情况，请你取出数据。
+select university,avg(question_id/device_id) avg_answer_cnt from user_profile u,question_practice_detail q where u.device_id=q.device_id group by university order by university asc
