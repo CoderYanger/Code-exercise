@@ -5,6 +5,7 @@
  * Date: 2026-05-10
  * Time: 18:12
  */
+
 class Solution {
     //788. 旋转数字
     public int rotatedDigits(int n) {
