@@ -28,4 +28,17 @@ class Solution {
         head.next=null;
         return newhead;
     }
+    //206. 反转链表
+    //解法二：循环
+    public ListNode reverseList(ListNode head) {
+        ListNode pre=null;
+        ListNode cur=head;
+        while(cur!=null){
+            ListNode nxt=cur.next;
+            cur.next=pre;
+            pre=cur;
+            cur=nxt;
+        }
+        return pre;
+    }
 }
