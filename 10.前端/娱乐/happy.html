@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- div独占一行，大盒子 ；span不独占一行，小盒子 -->
+    <h1>常文博</h1>
+    <div>
+        <h2>基本信息</h2>
+        <!-- title：提示文本；alt：图片加载失败时的文字信息；width和height分别设置图片宽度和高度 p标签分段落-->
+        <img src="https://pic.rmb.bdstatic.com/bjh/news/db01f0d4a599d610d8dc66abf14e0c8a.jpeg" 
+        title="这是一条傻狗"alt="图片加载失败"width="200"height="200">
+        <span><p>求职意向：当王洋的狗</p></span>
+        <span><p>联系电话：8008008800</p></span>
+        <span><p>个人邮箱：1771625585@qq.com</p></span>
+        <span><p><a href="https://www.douyin.com/user/MS4wLjABAAAAJQQSFCxLTTt-A1agHgQtiM9YtNcbhS3hWpyuPXNbvu8?from_tab_name=main&is_search=0&list_name=follow&nt=0">我的抖音</a></p></span>
+        <span><p>我的抖音没啥看的，还是多去看看王洋的吧👇</p></span>
+        <span><p><a href="https://gitee.com/miraitowa6">王洋的Gitee</a></p></span>
+        <span><p><a href="https://github.com/CoderYanger">王洋的GitHub</a></p></span>
+        <span><p><a href="https://blog.csdn.net/Miraitowa_6?type=blog">王洋的博客</a></p></span>
+    </div>
+    <div>
+        <h2>教育背景</h2>
+        <!-- ol有序列表，type：a、A、i、I、1分别表示小写英文、大写英文、小写罗马、大写罗马、数字 -->
+        <ol type="1">
+            <li>小学</li>
+            <li>初中</li>
+            <li>高中</li>
+            <li>大学</li>
+        </ol>
+    </div>
+    <div>
+        <h2>专业技能</h2>
+        <!-- ul无序列表，type：disc、square、circle分别表示实心圆、方块、空心圆 -->
+        <ul type="circle">
+            <li>掌握汪汪叫技巧</li>
+            <li>骂不还口</li>
+            <li>打不还手</li>
+            <li>掌握当牛做马的技巧</li>
+            <li>讨人稀罕</li>
+        </ul>
+    </div>
+    <div>
+        <h2>当狗优势</h2>
+        <ol>
+            <h3>会耍帅</h3>
+            <p>发布时间：2022年1月12日</p>
+            <!-- target默认是_self，_blank表示用新的标签页打开 -->
+            <span><p><a href="https://www.douyin.com/user/MS4wLjABAAAAJQQSFCxLTTt-A1agHgQtiM9YtNcbhS3hWpyuPXNbvu8?from_tab_name=main&is_search=0&list_name=follow&modal_id=7477135485651963176&nt=0"target="_blank">耍帅视频</a></p></span>
+        </ol>
+    </div>
+    <div>
+        <h2>个人评价</h2>
+        <p>绝对具备当王洋的狗的基本条件和素质</p>
+    </div>
+    <div>
+        <h2>座右铭</h2>
+        <p>当狗当狗，一生当狗！</p>
+    </div>
+    <p><h3>如果你也想当王洋的狗，欢迎加入我们！！！</h3></p>
+    <table>
+        <!-- thead：表格的头部区域 -->
+        <thead><h3>填写你的当狗信息</h3></thead>
+        <!-- tr：表格的一行 -->
+        <tr>
+            <!-- td：一个单元格 -->
+            <td>
+                <!-- label：点击label也能选中对应的单选，for属性：指定当前label和哪个相同id的input标签对应 -->
+                <label for="name">狗名</label>
+            </td>
+            <td><input type="text"name=""id="name"></td>
+        </tr>
+        <tr>
+            <td>性别</td>
+            <td>
+                <!-- 单选框radio；复选框checkbox；checked设置默认值；name相同时只能选一个 -->
+                <input type="radio"name="sex"id="male"checked="checked">
+                <label for="male">
+                    <img src="https://img95.699pic.com/xsj/05/2y/9a.jpg!/fw/700/watermark/url/L3hzai93YXRlcl9kZXRhaWwyLnBuZw/align/southeast" alt=""width="20"height="20">公
+                </label>
+                <input type="radio"name="sex"id="female">
+                <label for="female">
+                    <img src="https://pic.616pic.com/ys_bnew_img/00/06/90/6YlqFNky01.jpg" alt=""width="20"height="20">母
+                </label>
+            </td>
+        </tr>
+        <tr>
+            <td>出生日期</td>
+            <td>
+                <!-- select下拉菜单；selected="selected"表示默认选中；option提供选项 -->
+                <select name="" id="">
+                    <option value="">--请选择年份--</option>
+                    <option value="">2000</option>
+                    <option value="">2001</option>
+                    <option value="">2002</option>
+                    <option value="">2003</option>
+                    <option value="">2004</option>
+                    <option value="">2005</option>
+                    <option value="">2006</option>
+                </select>
+                <select name="" id="">
+                    <option value="">--请选择月份--</option>
+                    <option value="">1</option>
+                    <option value="">2</option>
+                    <option value="">3</option>
+                    <option value="">4</option>
+                    <option value="">5</option>
+                    <option value="">6</option>
+                    <option value="">7</option>
+                    <option value="">8</option>
+                    <option value="">9</option>
+                    <option value="">10</option>
+                    <option value="">11</option>
+                    <option value="">12</option>
+                </select>
+                <select name="" id="">
+                    <option value="">--请选择日期--</option>
+                    <option value="">1</option>
+                    <option value="">2</option>
+                    <option value="">3</option>
+                    <option value="">4</option>
+                    <option value="">5</option>
+                    <option value="">6</option>
+                    <option value="">7</option>
+                    <option value="">8</option>
+                    <option value="">9</option>
+                    <option value="">10</option>
+                    <option value="">11</option>
+                    <option value="">12</option>
+                    <option value="">13</option>
+                    <option value="">14</option>
+                    <option value="">15</option>
+                    <option value="">16</option>
+                    <option value="">17</option>
+                    <option value="">18</option>
+                    <option value="">19</option>
+                    <option value="">20</option>
+                    <option value="">21</option>
+                    <option value="">22</option>
+                    <option value="">23</option>
+                    <option value="">24</option>
+                    <option value="">25</option>
+                    <option value="">26</option>
+                    <option value="">27</option>
+                    <option value="">28</option>
+                    <option value="">29</option>
+                    <option value="">30</option>
+                    <option value="">31</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="address">目前地址</label></td>
+            <td><input type="text" id="address"></td>
+        </tr>
+        <tr>
+            <td>应聘岗位</td>
+            <td>
+                <input type="checkbox"name="" id="fe">
+                <label for="fe">当王洋睡觉枕着的狗</label>
+                <input type="checkbox"name="" id="server">
+                <label for="server">给王洋做饭的狗</label>
+                <input type="checkbox"name="" id="test">
+                <label for="test">给王洋擦鞋的狗</label>
+                <input type="checkbox"name="" id="operation">
+                <label for="operation">给王洋打扫卫生的狗</label>
+            </td>
+        </tr>
+        <tr>
+            <td>掌握的技能</td>
+            <!-- textarea：内容框 -->
+            <td><textarea name="" id=""cols="30"row="10"></textarea></td>
+        </tr>
+        <tr>
+            <td>当狗经历</td>
+            <!-- textarea：内容框 -->
+            <td><textarea name="" id=""cols="30"row="10"></textarea></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <input type="checkbox"id="read">
+                <label for="read">我已仔细阅读当狗的招聘要求</label>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><a href="#">查看我的状态</a></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <ul>
+                    <li>以上信息真实有效</li>
+                    <li>能够尽早去给王洋当狗</li>
+                    <li>能够接受王洋的无理由打骂</li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
