@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>双缝干涉动态演示</title>
+    <!-- 用更稳定的p5.js CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>
+    <style>
+        body {padding: 20px; font-family: Arial;}
+        .slider-group {margin: 15px 0;}
+        label {font-size: 14px; margin-right: 10px;}
+        input[type="range"] {width: 300px;}
+        span {color: #666; font-size: 13px; margin-left: 10px;}
+        /* 画布直接显示，不做复杂布局 */
+        canvas {border: 1px solid #ddd; margin-top: 20px;}
+    </style>
+</head>
+<body>
+    <h3>双缝干涉参数调节</h3>
+    <h3>设计人：刘佳亮</h3>
+    <!-- 参数滑块 -->
+    <div class="slider-group">
+        <label>双缝间距 (mm)：</label>
+        <input type="range" id="d" min="0.1" max="1.5" step="0.05" value="0.5">
+        <span id="d-text">0.5</span>
+    </div>
+    <div class="slider-group">
+        <label>光的波长 (nm)：</label>
+        <input type="range" id="lam" min="400" max="700" step="10" value="600">
+        <span id="lam-text">600</span>
+    </div>
+    <div class="slider-group">
+        <label>缝到屏距离 (m)：</label>
+        <input type="range" id="D" min="0.5" max="3" step="0.1" value="1">
+        <span id="D-text">1</span>
+    </div>
+
+    <script>
+        // 核心参数
+        let d = 0.5e-3, lam = 600e-9, D = 1;
+        const w = 800, h = 400; // 画布尺寸
+
+        // p5.js的初始化函数（固定写法，必须有）
+        function setup() {
+            createCanvas(w, h); // 创建画布（直接显示在页面）
+            // 绑定滑块实时更新
+            document.getElementById('d').oninput = (e) => {
+                d = e.target.value * 1e-3;
+                document.getElementById('d-text').innerText = e.target.value;
+            };
+            document.getElementById('lam').oninput = (e) => {
+                lam = e.target.value * 1e-9;
+                document.getElementById('lam-text').innerText = e.target.value;
+            };
+            document.getElementById('D').oninput = (e) => {
+                D = e.target.value;
+                document.getElementById('D-text').innerText = e.target.value;
+            };
+        }
+
+        // p5.js的绘制函数（每一帧自动执行，实现动态）
+        function draw() {
+            background(255); // 白色背景
+            strokeWeight(1); // 线条粗细
+
+            // 计算并绘制干涉条纹
+            for (let x = 0; x < w; x++) {
+                // 画布x映射为实际屏幕位置（-0.01m ~ 0.01m）
+                let xScreen = map(x, 0, w, -0.01, 0.01);
+                // 干涉光强公式
+                let intensity = Math.cos(Math.PI * d * xScreen / (lam * D)) ** 2;
+                // 光强转红色（0=黑，255=红）
+                stroke(intensity * 255, 0, 0);
+                // 绘制竖线（条纹）
+                line(x, 0, x, h);
+            }
+
+            // 中心参考线
+            stroke(150);
+            line(w/2, 0, w/2, h);
+        }
+    </script>
+</body>
+</html>
