@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <!-- 单行输入 -->
+        姓名<input type="text">
+        <br>
+        密码<input type="password">
+        <br>
+        <!-- name相同时保证只能是男或女 -->
+        <!-- checked保证默认值，男和女都设置默认值时，具体默认值取决于浏览器的判断 -->
+        性别<input type="radio"name="gender"checked="checked">男
+        <input type="radio"name="gender">女
+        <br>
+        爱好
+        <input type="checkbox">吃饭
+        <input type="checkbox">睡觉
+        <input type="checkbox">玩游戏
+        <br>
+        <!-- value表示在按钮上显示的文字，alert表示按此按钮之后弹出的页面 -->
+        <input type="button" value="这是一个普通按钮" onclick="alert('hello')">
+    </form>
+</body>
+</html>
