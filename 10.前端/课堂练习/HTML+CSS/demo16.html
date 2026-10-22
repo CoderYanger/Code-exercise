@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a{
+            color:blue;
+            text-decoration: none;
+        }
+        a:hover{
+            text-decoration: underline;
+        }
+        table{
+            width: 536px;
+        }
+        .title.col-1{
+            font-size: 20px;
+            font-weight: bolder;
+        }
+        .col-1{
+            width:80%;
+            text-align: left;
+        }
+        .col-2{
+            width:20%;
+            text-align: center;
+        }
+        .icon{
+            background-image: url(https://img0.baidu.com/it/u=3485717180,4129050257&fm=253&fmt=auto&app=120&f=JPEG?w=800&h=800);
+            width: 24px;
+            height: 24px;
+            background-size: 100% 100%;
+            display: inline-block;
+            vertical-align: bottom;
+        }
+        .content{
+            font-size: 18px;
+            line-height: 40px;
+        }
+        .content .col-1,.content .col-2{
+            border-bottom: 2px solid #f3f3f3;
+        }
+        .num{
+            font-size: 20px;
+            color: #fffff3;
+        }
+        .first{
+            background-color: #f54545;
+            padding-right: 8px;
+        }
+        .second{
+            background-color: #ff8547;
+            padding-right: 8px;
+        }
+        .third{
+            background-color: #ffac38;
+            padding-right: 8px;
+        }
+        .other{
+            background-color: #8eb9f5;
+            padding-right: 8px;
+        }
+    </style>
+</head>
+<body>
+    <table cellspacing="0px">
+        <th class="title col-1">百度热榜</th>
+        <th class="title col-2"><a href="#">换一换<span class="icon"></span></a></th>
+        <tr class="content">
+            <td class="col-1"><span class="num first">1</span><a href="#">220V的电压电不死250的猫</a></td>
+            <td class="col-2">474万</td>
+        </tr>
+        <tr class="content">
+            <td class="col-1"><span class="num second">2</span><a href="#">220V的电压电不死250的猫</a></td>
+            <td class="col-2">474万</td>
+        </tr>
+        <tr class="content">
+            <td class="col-1"><span class="num third">3</span><a href="#">220V的电压电不死250的猫</a></td>
+            <td class="col-2">474万</td>
+        </tr>
+        <tr class="content">
+            <td class="col-1"><span class="num other">4</span><a href="#">220V的电压电不死250的猫</a></td>
+            <td class="col-2">474万</td>
+        </tr>
+    </table>
+</body>
+</html>
