@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <input type="button"value="这是一个按钮"> -->
+    <!-- 绑定事件，抬起的时候才触发 -->
+    <input type="text" onkeyup="myOnkeyUp()">
+    <span>这是一个span标签</span>
+    <img src="./蚩梦意难平.png" alt="图片加载失败"title="这是一个情怀图片" width="100px" height="100px">
+</body>
+<script>
+    // //给上面的按钮绑定 事件源
+    // let button = document.querySelector('input')
+    // //绑定事件类型(点击事件)
+    // //函数设定了事件处理程序
+    // button.onclick = function(){
+    //     alert("Hello")
+    // }
+    //事件源
+    // let input = document.querySelector('input')
+    //event 是一个全局变量，通过它可以获取到我们当前事件里面所有的一些属性、一些信息了
+    // input.onkeydown = function(event){
+    //     console.log("我的键盘正在按下")
+    //     let a = event.keyCode;
+    //     // console.log(a)
+    //     let b = String.fromCharCode(a)
+    //     console.log(b)
+    // }
+    //     input.onkeypress = function(event){
+    //     console.log("我的键盘正在按下")
+    //     let a = event.keyCode;
+    //     // console.log(a)
+    //     let b = String.fromCharCode(a)
+    //     console.log(b)
+    // }
+    // function myOnkeyUp(){
+    //     console.log("按键被抬起")
+    // }
+    let input = document.querySelector('input')
+    input.onkeydown = function(event){
+        //如果按键按下的是 shift,就弹出一个弹窗，提示 shift 被按下
+        if(event.shiftKey){
+            alert("shift键被按下")
+        }
+        //如果按键按下的是 alt,就弹出一个弹窗，提示 alt 被按下
+        if(event.altKey){
+            alert("alt键被按下")
+        }
+    }
+
+    let img = document.querySelector('img')
+    //dir 可以获取到当前对象的所有属性
+    console.dir(img)
+    img.title = "这是不良人们的意难平~~"
+    img.onclick = function(){
+        alert("你已经点击了这个图片")
+    }
+</script>
+</html>
