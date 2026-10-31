@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <input class="btn" type="button" value="播放" onclick="Onclick()">
+    <br> -->
+    <!-- <input class="input" type="text" name="" id="" value="0">
+    <input class="add" type="button" value="+1" onclick="Add()">
+    <input class="min" type="button" value="-1" onclick="Min()">
+    <br> -->
+    <!-- 绑定点击事件 -->
+    <input class="all" type="checkbox" onclick="SelectAll()"> 俺全都要<br>
+    <input type="checkbox" class="select"> 三星冰女<br>
+    <input type="checkbox" class="select"> 四星铁男<br>
+    <input type="checkbox" class="select"> 三星亚恒<br>
+    <input type="checkbox" class="select"> 三星岩宝<br>
+</body>
+<script>
+    // let btn = document.querySelector('.btn')
+    // // 当按钮的 value = 播放，此时将按钮 value 变成暂停
+    // // 否则变成播放
+    // function Onclick(){
+    //     if(btn.value == "播放"){
+    //         btn.value = "暂停"
+    //     }else{
+    //         btn.value = "播放"
+    //     }
+    // }
+
+    // function Add(){
+    //     //要想对数进行加减操作，需要先获取输入框
+    //     let input_element = document.querySelector('.input')
+    //     //细节：先转换成数字，再进行加法操作
+    //     input_element.value = parseInt(input_element.value) + 1
+    // }
+    // //跟加法一样，得到减法的代码
+    // function Min(){
+    //     let input_element = document.querySelector('.input')
+    //     input_element.value = parseInt(input_element.value) - 1
+    // }
+    let all = document.querySelector('.all')
+    //选中所有
+    let select = document.querySelectorAll('.select')
+    //打印一下对象的属性
+    console.dir(all)
+    function SelectAll(){
+        //把所有子选项设置成父选项一样的值
+        for(i=0;i<select.length;i++){
+            select[i].checked = all.checked
+        }
+    }
+    //一个个写 onclick 不现实，我们使用 for 循环来绑定
+    for(i=0;i<select.length;i++){
+        select[i].onclick = function(){
+            //检查是否选中了全部
+            all.checked = IsSelectAll(select)
+        }
+    }
+    function IsSelectAll(select){
+        for(i=0;i<select.length;i++){
+            if(select[i].checked == false){
+                //其中有一个未被选中，父选项就不能被选中
+                return false
+            }
+        }
+        return true
+    }
+</script>
+</html>
