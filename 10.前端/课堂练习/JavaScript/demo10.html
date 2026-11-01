@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 夜间模式切换 */
+        .light{
+            background-color: aliceblue;
+            color: black;
+            width:100%;
+            height:100%;
+        }
+        body,html{
+            width:100%;
+            height:100%;
+        }
+        .dark{
+            background-color: black;
+            color:white;
+            width:100%;
+            height:100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="light" onclick="changeStyle()">
+        这是一段话<br>
+        这是一段话<br>
+        这是一段话<br>
+        这是一段话<br>
+        这是一段话<br>
+        这是一段话<br>
+    </div>
+</body>
+<script>
+    function changeStyle(){
+        let element = document.querySelector('div')
+        // 如果当前样式是白天模式，此时就将其样式切换成黑夜模式
+        // 否则就将当前样式调整成白天样式
+        console.log(element.className)
+        if(element.className == "light"){
+            element.className = "dark"
+        }else{
+            element.className = "light"
+        }
+    }
+</script>
+</html>
