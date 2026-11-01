@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 点击字体就放大 -->
+    <!-- 绑定点击事件 -->
+    <div style="font-size: 10px;" onclick="changeSize()">哈哈哈</div>
+</body>
+<script>
+    function changeSize(){
+        //选中元素
+        let element = document.querySelector('div')
+        //查看属性
+        console.log(element.style)
+        let size = parseInt(element.style.fontSize) + 10
+        // //打印出来是 string 类型
+        // console.log(typeof(size))
+        //只有下面这行变了~~
+        element.style.cssText = "font-size:" + size + "px"
+        // element.style.fontSize = size + "px"
+    }
+</script>
+</html>
