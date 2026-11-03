@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 创建节点、插入节点 -->
+    <div>
+        <!-- 我们这次要插到这个地方 -->
+        <p class="p1">这是一个p标签1</p>
+        <p class="p2">这是一个p标签2</p>
+        <p class="p3">这是一个p标签3</p>
+    </div>
+</body>
+<script>
+    //创建一个 h3 的节点
+    let element = document.createElement('h3')
+    element.innerHTML = "这是我们创建的一个新的节点"
+    let div = document.querySelector('div')
+    div.appendChild(element)
+
+    let new_node = document.createElement('p')
+    new_node.innerHTML = "这是一个新p标签"
+    //插入的时候选中我们要插入哪个标签前面
+    //第一次把new_node插入到p1前面
+    div.insertBefore(new_node,document.querySelector('.p1'))
+    //第二次把new_node插入到p2前面
+    div.insertBefore(new_node,document.querySelector('.p2'))
+    //第三次把new_node插入到p3前面
+    div.insertBefore(new_node,document.querySelector('.p3'))
+    // div.insertBefore(new_node,null)
+    //插入后再修改刚刚的节点对象，也能够同步影响 DOM 树的内容
+    element.innerHTML = "我正在修改p标签的内容"
+</script>
+</html>
