@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 删除最后一个节点 -->
+    <!-- <div class="container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div id="delete">4</div>
+    </div> -->
+    <!-- 此时 id="delete"这个元素和 container 之间就不存在父子关系了 -->
+    <div class="container">
+    </div>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div id="delete">4</div>
+</body>
+</html>
+<script>
+    let parent = document.querySelector(".container")
+    let child = document.querySelector("#delete")
+    let element = parent.removeChild(child)
+    // console.dir(element)
+    // parent.appendChild(child)
+</script>
