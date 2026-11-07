@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 待办任务清单 */
+        /* 把浏览器默认样式清除 */
+        *{
+            margin: 0px;
+            padding: 0px;
+            /* 为了不让boder撑大我们的盒子，对其效果进行消除 */
+            box-sizing:border-box;
+        }
+        .nav{
+            width: 800px;
+            height: 100px;
+            /* 让浏览器自适配到中间 */
+            margin:0 auto;
+            /* 弹性布局 */
+            display: flex;
+            /* 垂直方向居中 */
+            align-items: center;
+        }
+        .nav input{
+            width:600px;
+            height:60px;
+            /* 设置圆角 */
+            border-radius: 5px;
+        }
+        .nav button{
+            width:200px;
+            height:60px;
+            background-color: orange;
+            color:white;
+            font-size: 20px;
+            border: orange;
+            /* 设置圆角 */
+            border-radius: 5px;
+        }
+        .nav button:active{
+            background-color: gray;
+        }
+        .container{
+            width: 800px;
+            /* 弹性布局 */
+            display: flex;
+            /* 上下为0，左右自适应 */
+            margin: 0px auto;
+        }
+        h3{
+            background-color: grey;
+            color: white;
+            /* 字体居中 */
+            text-align: center;
+            /* 宽度也跟上 */
+            width: 400px;
+            height:60px;
+            /* 把字体从上面调整到中间 */
+            padding-top: 15px;
+        }
+        .todo,
+        .done{
+            width:50%;
+            height:100%;
+        }
+        .row{
+            width:400px;
+            display: flex;
+            align-items:center;
+        }
+        span{
+            width: 200px;
+            font-size: 20px;
+            margin-left: 5px;
+        }
+        .row button{
+            width:90px;
+            height:40px;
+            font-size:20px;
+            margin-top:10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <!-- 绑定点击事件 -->
+        <input type="text"><button onclick="newJob()">新建任务</button>
+    </div>
+    <div class="container">
+        <div class="todo">
+            <h3>未完成</h3>
+            <div class="row">
+                <input type="checkbox" name="" id="">
+                <span>吃饭</span><button>删除</button>
+            </div>
+            <div class="row">
+                <input type="checkbox" name="" id="">
+                <span>吃饭</span><button>删除</button>
+            </div>
+        </div>
+        <div class="done">
+            <h3>已完成</h3>
+        </div>
+    </div>
+</body>
+<script>
+    function newJob(){
+        // 获取到 input 输入框按钮
+        let input = document.querySelector('.nav input')
+        // 获取到输入的信息
+        let input_info = input.value
+        // 优化：如果内容为空就直接return,避免添加空任务
+        if(input_info == ''){
+            return
+        }
+        console.log(input_info)
+        // 获取到 todo 这个 div
+        let todo = document.querySelector('.todo')
+        // 创建一个 div
+        let div = document.createElement('div')
+        // 创建一个 checkbox
+        let checkbox = document.createElement('input')
+        checkbox.type = 'checkbox'
+        // 创建一个 span(文本内容时刚才输入的信息对应的文本)
+        let span = document.createElement('span')
+        span.innerHTML = input_info
+        console.log(checkbox)
+        console.log(span)
+        // 创建一个删除 button
+        let button = document.createElement('button')
+        button.innerHTML = "删除"
+        div.appendChild(checkbox)
+        div.appendChild(span)
+        div.appendChild(button)
+
+        // let new_job_button = document.querySelector('.nav button')
+        // // 查看按钮属性
+        // console.dir(new_job_button)
+
+        // 更新样式
+        div.className = 'row'
+        // 将 div 插入到 todo 这个 div 中
+        todo.appendChild(div)
+
+        // 注意，我们获取到的删除按钮是多个，所以用到All
+        let delete_buttons = document.querySelectorAll('.row button')
+        // 打印看是否找到对应按钮
+        console.log(delete_buttons)
+        // 将绑定的所有事件进行删除
+        for(i=0;i<delete_buttons.length;i++){
+            delete_buttons[i].onclick = function(){
+                // 删除对应整个的 div
+                let parent = this.parentNode;
+                console.log(parent)
+                let grand_parent = parent.parentNode
+                console.log(grand_parent)
+                // 删除父级元素
+                grand_parent.removeChild(parent)
+            }
+        }
+        //先获取到checkbox元素，对其进行绑定，再执行相关程序
+        let checkbox_buttons = document.querySelectorAll('.row input')
+        //给每一个复选框绑定点击事件
+        for(i=0;i<checkbox_buttons.length;i++){
+            checkbox_buttons[i].onclick = function(){
+                //将节点插入到对应的 div 中
+                // row代表的插入的节点
+                let row = this.parentNode;
+                // target 代表的是将 row 插入到哪个 div 中
+                // 如果复选框已经被选中，那么target就是已完成对应的这个div
+                // 否则target就是未完成对应的 div
+                console.log(this.checked)//先看一下是什么
+                if(this.checked){
+                    target = document.querySelector('.done')
+                }else{
+                    target = document.querySelector('.todo')
+                }
+                target.appendChild(row)
+            }
+        }
+    }
+</script>
+</html>
