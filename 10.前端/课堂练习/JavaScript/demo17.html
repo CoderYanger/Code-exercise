@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <!-- <button>点我</button> -->
+    <!-- <div id="content">
+        <span id="ele">页面元素</span>
+    </div> -->
+    <!-- <input type="text" value="input" id="name"> -->
+    <!-- <a href="http://www.baidu.com">百度</a> -->
+    <div style="font-size:40px;">我是一个div</div>
+    <script>
+        // 操作css
+        console.log($("div").css("font-size"));
+        //修改为16px
+        $("div").css("font-size","16px");
+        //获取a标签的href属性
+        // console.log($("a").attr("href","http:www.youdao.com"));//attr就是属性的简写
+        //获取页面元素内容
+        // $("#content").click(function(){
+        //     console.log($("#name").val());
+        //     $("#name").val("input22222222");
+        //     // console.log($("#name").text());
+        //     // console.log($("#name").html());
+        //     // console.log($(this).text());
+        //     // // 下面这种方式也行
+        //     // console.log($(this).html());
+        //     // 修改页面元素
+        //     // $(this).text("<h1>我是点击后的内容</h1>");//不能解析html元素
+        //     // 下面这种写法效果也是一样的，就不展示了
+        //     // $(this).html("<h1>我是点击后的内容</h1>");//会解析html标签
+        // });
+        // $(document).ready(function(){
+        //     alert('页面加载完成');
+        // });
+
+        // $("button").click(function(){
+        //     alert("点击弹框");
+        // });
+
+    </script>
+</body>
+</html>
